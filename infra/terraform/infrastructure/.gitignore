@@ -1,0 +1,6 @@
+# pem files
+*.pem
+.terraform/*
+plan.out
+terraform.tfstate*
+.terraform.lock*
