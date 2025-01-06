@@ -45,3 +45,77 @@ This project is designed to create a secure network infrastructure on Azure usin
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/GGBoi666/GiladTerraformProj.git
+
+## Terraform Infrastructure Configuration
+
+## Directory Overview
+This directory contains the core Terraform configurations for deploying the Azure infrastructure. Each file is responsible for a specific component of the infrastructure.
+
+## Configuration Files
+
+### Core Files
+- `main.tf` - Core provider configuration and resource group setup
+- `variables.tf` - Input variables for the infrastructure
+- `outputs.tf` - Output values for reference
+
+### Compute Resources
+- `app_server.tf` - Application server VM configuration
+- `db_server.tf` - Database server VM configuration
+
+### Networking
+- `network.tf` - Virtual network and subnet configurations
+- `nsg.tf` - Network Security Group rules
+- `bastion.tf` - Azure Bastion configuration
+- `load_balancer.tf` - Load balancer setup
+
+### Security
+- `keyvault.tf` - Azure Key Vault configuration
+- `rbac.tf` - Role-based access control settings
+- `policy.tf` - Azure Policy definitions
+
+### Storage
+- `storage_account.tf` - Azure Storage Account configuration
+- `backup.tf` - Backup configurations
+
+### Monitoring
+- `monitor.tf` - Azure Monitor configuration
+- `log_analytics.tf` - Log Analytics workspace setup
+- `network_watcher.tf` - Network monitoring configuration
+
+## Usage
+
+### Initialize the Configuration
+```bash
+terraform init
+```
+
+### Preview Changes
+```bash
+terraform plan
+```
+
+### Apply Configuration
+```bash
+terraform apply
+```
+
+### Destroy Infrastructure
+```bash
+terraform destroy
+```
+
+## Configuration Variables
+Key variables that can be customized in `terraform.tfvars`:
+- Resource naming
+- VM sizes
+- Network address spaces
+- Location/region
+- Tags
+
+## State Management
+The Terraform state is stored locally. For production environments, consider using remote state storage with Azure Storage Account.
+
+## Notes
+- Ensure all required Azure provider credentials are configured
+- Review security group rules before deployment
+- Check resource quotas in your subscription
